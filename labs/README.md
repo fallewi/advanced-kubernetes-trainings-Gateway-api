@@ -3,7 +3,7 @@
 1. Clone this repository
 
 ```code
-git clone https://github.com/f5devcentral/NGINX-Gateway-Fabric-Lab.git
+git clone  https://github.com/fallewi/advanced-kubernetes-trainings-Liora.git
 ```
 
 2. Change directory
