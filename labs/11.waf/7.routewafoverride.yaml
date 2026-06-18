@@ -1,0 +1,20 @@
+apiVersion: gateway.nginx.org/v1alpha1
+kind: WAFPolicy
+metadata:
+  name: customers-strict-protection
+spec:
+  type: HTTP
+  targetRefs:
+  - group: gateway.networking.k8s.io
+    kind: HTTPRoute
+    name: customers
+  policySource:
+    httpSource:
+      url: http://bundle-server.default.svc.cluster.local/dataguard-blocking.tgz
+  securityLogs:
+  - destination:
+      type: syslog
+      syslog:
+        server: syslog-svc:514
+    logSource:
+      defaultProfile: log_all
